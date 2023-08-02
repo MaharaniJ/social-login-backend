@@ -26,7 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(
   cors({
-    origin: "http://localhost:3001",
+    origin: "https://clever-pudding-31c61d.netlify.app",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
