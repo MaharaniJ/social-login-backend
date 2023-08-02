@@ -2,7 +2,7 @@ const router = require("express").Router();
 const passport = require("passport");
 
 
-const CLIENT_URL = "http://localhost:3001/";
+const CLIENT_URL = "startling-figolla-c506c8.netlify.app/";
 
 router.get("/login/success", (req, res) => {
   if (req.user) {
