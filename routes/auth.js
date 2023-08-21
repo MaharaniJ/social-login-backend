@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const passport = require("passport");
-//"https://clever-pudding-31c61d.netlify.app"
 
 const CLIENT_URL = "https://startling-figolla-c506c8.netlify.app";
 
@@ -23,17 +22,15 @@ router.get("/login/failed", (req, res) => {
 });
 
 router.get("/logout", (req, res) => {
-  req.logout(function(err) {
+  req.logout(function (err) {
     if (err) {
       // Handle the error
       console.error(err);
-      return res.status(500).send('Internal Server Error');
+      return res.status(500).send("Internal Server Error");
     }
     // Redirect or send a response after successful logout
     res.redirect(CLIENT_URL);
   });
- 
-  
 });
 router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
 router.get(
@@ -43,7 +40,6 @@ router.get(
     failureRedirect: "/login/failed",
   })
 );
-
 router.get("/github", passport.authenticate("github", { scope: ["profile"] }));
 
 router.get(
@@ -53,8 +49,10 @@ router.get(
     failureRedirect: "/login/failed",
   })
 );
-
-router.get("/facebook", passport.authenticate("facebook", { scope: ["profile"] }));
+router.get(
+  "/facebook",
+  passport.authenticate("facebook", { scope: ["profile"] })
+);
 
 router.get(
   "/facebook/callback",
@@ -64,4 +62,4 @@ router.get(
   })
 );
 
-module.exports = router
+module.exports = router;

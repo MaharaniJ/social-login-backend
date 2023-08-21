@@ -16,3 +16,17 @@
 
 
 //https://social-login-backend-7jnn.onrender.com
+
+https://social-login-backend-7jnn.onrender.com
+
+https://startling-figolla-c506c8.netlify.app
+
+https://social-login-backend-7jnn.onrender.com/auth/google
+
+https://social-login-backend-7jnn.onrender.com/auth/google/callback
+
+699812083032-f2bggt1d6l38ufjb4eivmg1lv6q68vol.apps.googleusercontent.com
+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
+
+ac46f6ca693bd30d31374678fbe16393ad15beb4
+d91463497f26d8dfad7d
