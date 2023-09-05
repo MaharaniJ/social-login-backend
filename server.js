@@ -3,22 +3,22 @@ const cors = require("cors");
 const passportSetup = require("./passport");
 const passport = require("passport");
 const authRoute = require("./routes/auth");
-const session = require('express-session');
+const session = require("express-session");
 const app = express();
-const connectDB = require('./config/db')
-const dotenv = require('dotenv')
+const connectDB = require("./config/db");
+const dotenv = require("dotenv");
 
-dotenv.config()
-connectDB()
+dotenv.config();
+connectDB();
 //const URL = process.env.URL
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 
 // Session middleware
 app.use(
   session({
-    secret: 'sessionSecret',
+    secret: "sessionSecret",
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
   })
 );
 // Passport initialization
@@ -26,14 +26,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(
   cors({
-    origin: "https://startling-figolla-c506c8.netlify.app" ,
+    origin: "https://startling-figolla-c506c8.netlify.app",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
-  //"https://clever-pudding-31c61d.netlify.app"
 );
-
-
 
 app.use("/auth", authRoute);
 app.listen(PORT, () => {
